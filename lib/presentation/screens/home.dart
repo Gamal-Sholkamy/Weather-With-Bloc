@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget{
             final AppBloc homeBloc =AppBloc.get(context);
             WeatherModel weatherModel=homeBloc.weatherModel!;
 
-            List<String>timesAt=[weatherModel.timeAt12AM,weatherModel.timeAt4AM,weatherModel.timeAt8AM,
+            List<DateTime>timesAt=[weatherModel.timeAt12AM,weatherModel.timeAt4AM,weatherModel.timeAt8AM,
               weatherModel.timeAt12PM,weatherModel.timeAt4PM,weatherModel.timeAt8PM,];
 
             List<String>iconsAt=[weatherModel.iconAt12AM,weatherModel.iconAt4AM,weatherModel.iconAt8AM,

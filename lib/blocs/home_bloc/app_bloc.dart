@@ -13,6 +13,7 @@ class AppBloc extends Cubit<AppStates>{
      WeatherService weatherService=WeatherService();
      weatherModel=await weatherService.getAreaWeather(areaName: areaName);
      emit(HomeGettingWeatherLoadedState(weatherModel: weatherModel!));
+
    }
    catch(ex){
      print('an $ex occur');

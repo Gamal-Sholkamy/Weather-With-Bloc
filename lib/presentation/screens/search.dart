@@ -23,7 +23,7 @@ class SearchScreen extends StatelessWidget{
                       keyboardType: TextInputType.text,
                       maxLines: 1,
                       onFieldSubmitted: (value)async{
-                        WeatherModel model=await appBloc.getAreaWeather(value);
+                        await appBloc.getAreaWeather(value);
                         Navigator.pop(context);
                         print('hello2');
                       },
@@ -35,8 +35,7 @@ class SearchScreen extends StatelessWidget{
                         ),
                         suffixIcon: IconButton(
                           onPressed: () async{
-
-                              WeatherModel model=await appBloc.getAreaWeather(controller.text);
+                              await appBloc.getAreaWeather(controller.text);
                               Navigator.pop(context);
                               print('hello2');
 
