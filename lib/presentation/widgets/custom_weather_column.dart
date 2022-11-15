@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomWeatherColumn extends StatelessWidget{
-  String timeAt;
+  DateTime timeAt;
   String iconAt;
   double tempAt;
   CustomWeatherColumn({required this.timeAt,required this.iconAt,required this.tempAt,});
@@ -13,7 +13,7 @@ class CustomWeatherColumn extends StatelessWidget{
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children:  [
-          Text(timeAt),
+          Text("${timeAt.hour}:${timeAt.minute}"),
           Image.network(iconAt),
           Text('$tempAt'),
         ],

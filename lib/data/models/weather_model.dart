@@ -8,12 +8,12 @@ class WeatherModel{
   double avrTemp;
   String weatherStateName;
   /////////الساعة كل 4 ساعات///////
-  String timeAt12AM;
-  String timeAt4AM;
-  String timeAt8AM;
-  String timeAt12PM;
-  String timeAt4PM;
-  String timeAt8PM;
+  DateTime timeAt12AM;
+  DateTime timeAt4AM;
+  DateTime timeAt8AM;
+  DateTime timeAt12PM;
+  DateTime timeAt4PM;
+  DateTime timeAt8PM;
   /////درجة الحرارة كل 4 ساعات////
   double tempAt12AM;
   double tempAt4AM;
@@ -75,12 +75,12 @@ class WeatherModel{
       avrTemp: jsonDataDay['avgtemp_c'],
       weatherStateName: jsonDataDay['condition']['text'],
       ////
-      timeAt12AM: jsonDataHour[0]['time'],
-      timeAt4AM: jsonDataHour[3]['time'],
-      timeAt8AM: jsonDataHour[7]['time'],
-      timeAt12PM: jsonDataHour[13]['time'],
-      timeAt4PM: jsonDataHour[17]['time'],
-      timeAt8PM: jsonDataHour[21]['time'],
+      timeAt12AM: DateTime.parse(jsonDataHour[0]['time']),
+      timeAt4AM: DateTime.parse(jsonDataHour[3]['time']),
+      timeAt8AM: DateTime.parse(jsonDataHour[7]['time']),
+      timeAt12PM: DateTime.parse(jsonDataHour[13]['time']),
+      timeAt4PM: DateTime.parse(jsonDataHour[17]['time']),
+      timeAt8PM: DateTime.parse(jsonDataHour[21]['time']),
       ////
       tempAt12AM:jsonDataHour[0]['temp_c'],
       tempAt4AM:jsonDataHour[3]['temp_c'] ,
@@ -89,12 +89,12 @@ class WeatherModel{
       tempAt4PM:jsonDataHour[17]['temp_c'] ,
       tempAt8PM:jsonDataHour[21]['temp_c'] ,
       //////
-      iconAt12AM:'http${jsonDataHour[0]['condition']['icon']}' ,
-      iconAt4AM:'http${jsonDataHour[3]['condition']['icon']}' ,
-      iconAt8AM:'http${jsonDataHour[7]['condition']['icon']}' ,
-      iconAt12PM:'http${jsonDataHour[13]['condition']['icon']}' ,
-      iconAt4PM:'http${jsonDataHour[17]['condition']['icon']}' ,
-      iconAt8PM:'http${jsonDataHour[21]['condition']['icon']}',
+      iconAt12AM:'http:${jsonDataHour[0]['condition']['icon']}' ,
+      iconAt4AM:'http:${jsonDataHour[3]['condition']['icon']}' ,
+      iconAt8AM:'http:${jsonDataHour[7]['condition']['icon']}' ,
+      iconAt12PM:'http:${jsonDataHour[13]['condition']['icon']}' ,
+      iconAt4PM:'http:${jsonDataHour[17]['condition']['icon']}' ,
+      iconAt8PM:'http:${jsonDataHour[21]['condition']['icon']}',
 
     );
 
