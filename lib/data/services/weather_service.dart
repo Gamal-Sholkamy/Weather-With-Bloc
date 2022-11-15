@@ -5,17 +5,16 @@ import 'package:http/http.dart'as http;
 
 class WeatherService{
 
-  Future<dynamic> getAreaWeather({required String areaName})async{
+  Future<WeatherModel> getAreaWeather({required String areaName})async{
     WeatherModel? weatherModel;
-    try{
+
       Uri url=Uri.parse("$baseURL/forecast.json?key=$apiKey&q=$areaName&days=2&aqi=no&alerts=no");
       http.Response response=await http.get(url);
       Map<String,dynamic> data=jsonDecode(response.body);
       weatherModel=WeatherModel.fromJson(data);
-    }
-    catch(ex){
-      print('an $ex happened');
-    }
+      return weatherModel;
+
+
 
   }
 

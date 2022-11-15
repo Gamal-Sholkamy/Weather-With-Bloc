@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_with_bloc/blocs/home_bloc/app_bloc.dart';
+import 'package:weather_with_bloc/blocs/home_bloc/home_states.dart';
 
 import '../../data/models/weather_model.dart';
 
@@ -10,7 +11,7 @@ class SearchScreen extends StatelessWidget{
   Widget build(BuildContext context) {
 
     return Scaffold(
-      body: BlocBuilder(
+      body: BlocBuilder<AppBloc,AppStates>(
           builder: (context,state){
             AppBloc appBloc =AppBloc.get(context);
             return  Column(

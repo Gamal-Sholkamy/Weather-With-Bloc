@@ -14,7 +14,6 @@ class HomeScreen extends StatelessWidget{
       body: BlocBuilder<AppBloc,AppStates>(
         builder: (context,state){
 
-
           if (state is HomeGettingWeatherLoadedState){
             final AppBloc homeBloc =AppBloc.get(context);
             WeatherModel weatherModel=homeBloc.weatherModel!;
@@ -108,7 +107,7 @@ class HomeScreen extends StatelessWidget{
             );
           }
           else if(state is HomeGettingWeatherErrorState){
-            Column(
+            return Column(
               mainAxisSize: MainAxisSize.max,
               children: [
 

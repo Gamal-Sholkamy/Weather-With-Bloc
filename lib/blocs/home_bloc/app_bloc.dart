@@ -7,7 +7,7 @@ class AppBloc extends Cubit<AppStates>{
   AppBloc():super(HomeInitialState());
   static AppBloc get(context)=>BlocProvider.of(context);
  WeatherModel? weatherModel;
- Future<dynamic> getAreaWeather(String areaName)async{
+ Future<void> getAreaWeather(String areaName)async{
    emit(HomeGettingWeatherLoadingState());
    try{
      WeatherService weatherService=WeatherService();
